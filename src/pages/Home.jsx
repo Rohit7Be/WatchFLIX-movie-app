@@ -3,6 +3,8 @@ import MovieCard from '../components/MovieCard'
 import { useState, useEffect } from 'react'
 import { searchMovies, getPopularMovies } from '../services/api'
 import '../css/Home.css'
+import { FaSearch } from "react-icons/fa";
+
 const Home = () => {
   const [searchquery, setSearchquery] = useState("")
   const [movies, setMovies] = useState([])
@@ -71,7 +73,7 @@ const Home = () => {
     <div className='home'>
       <form onSubmit={handleSearch} className='search-form'>
         <input type="text" placeholder='Search for movies...' className='search-input' value={searchquery} onChange={(e) => setSearchquery(e.target.value)} />
-        <button type='submit' className='search-btn'>Search</button>
+        <button type='submit' className='search-btn'><FaSearch /></button>
       </form>
       {error && <div className="error-message">{error}</div>}
 

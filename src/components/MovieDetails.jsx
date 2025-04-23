@@ -34,6 +34,7 @@ const MovieDetails = () => {
           console.error("Error fetching cast:", error);
         }
       };
+      window.scrollTo(0, 0);
     
       fetchCast();
   }, [id]);
